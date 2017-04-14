@@ -1,0 +1,36 @@
+#!/usr/bin
+
+Array - Data Structure
+
+Description:
+- data type to describe a collection of elements (values or variables) each
+  selected by one or more indices (keys) computed at run time
+
+Advantages:
+Quick Insertion
+Very Fast if index known
+
+Disadvantages:
+Slow Search
+Slow Deletion
+Fixed Size
+
+
+Math
+- Definition: Matrix
+- 	Two-dimensional grid (two-dimentional ARRAY)
+
+
+Generally has two operations:
+- get(A,I): the data stored in the element of the array A whose indices are
+  the integer tuple I
+- set(A, I, V): the array that results by setting the value of that element to
+  V
+
+In order for it to satisfy the axioms(statement taken to be true / a premise)
+we must satisfy the following conditions:
+- get(set(A,I, V), I) = V
+- get(set(A,I, V), J) = get(A,J) if I != J
+for any state A, any value V, and any tuples I,J
+
+
