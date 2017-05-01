@@ -25,6 +25,11 @@ public class Link {
         prev = n;
         return true;
     }   // boolean setPrev(Link n)
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> Sandbox
     public char getValue() {
         return value;
     }   // char getValue()
