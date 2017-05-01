@@ -26,6 +26,7 @@ public class Link {
         return true;
     }   // boolean setPrev(Link n)
 
+
     public char getValue() {
         return value;
     }   // char getValue()
@@ -37,4 +38,5 @@ public class Link {
     public Link getPrev() {
         return prev;
     }   // Link getPrev()
+
 }   // Class Link

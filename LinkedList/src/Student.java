@@ -12,20 +12,18 @@ public class Student {
     private int age;
     private Student next;
 
-    Student() {
-        name = "";
-        age = 0;
+    Student(String n, int a) {
+        name = n;
+        age = a;
         next = null;
     }   // Constructor StudentList()
 
-    public void setNext(Student s) {
-        next = s;
-    }   // void setNext(Student s)
-
+    public void setNext(Student n) {
+        next = n;
+    }
     public Student getNext() {
         return next;
-    }   // Student getNext()
-
+    }
     public void setName(String n) {
         name = n;
     }   // void setName()

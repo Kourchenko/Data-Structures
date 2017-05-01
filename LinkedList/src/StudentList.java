@@ -1,5 +1,6 @@
 import java.util.EmptyStackException;
 
+
 public class StudentList {
 
     private Student head;
@@ -20,6 +21,7 @@ public class StudentList {
     StudentList() {
         head = null;
         tail = null;
+        nStudents = 0;
     }
 
     public void insertHead(Student s) {
@@ -32,12 +34,12 @@ public class StudentList {
             head = s;
             tail = s;
             nStudents++;
-            System.out.println(head.getName());
         }
-        System.out.println("HEAD Student: " + head.getName());
-        s.setNext(head);
-        head = s;
-        nStudents++;
+        else {
+            s.setNext(head);
+            head = s;
+            nStudents++;
+        }
     }   // void insertHead(Student s)
 
     public void insertTail(Student s) {
@@ -46,18 +48,18 @@ public class StudentList {
          * Insert a link pointing to s at the end of the list.
          */
 
-
+        Student newS = s;
         if (tail == null) {
-            head = s;
+            head = newS;
+            tail = newS;
+            nStudents++;
+        }
+        else {
+            tail.setNext(newS);
             tail = s;
             nStudents++;
         }
-
-        tail.setNext(s);
-        tail = s;
-        nStudents++;
     }   // void insertTail(Student s)
-
 
     public Student deleteHead() {
 
@@ -68,23 +70,23 @@ public class StudentList {
 
         try {
             if (head == null) {
-                throw new EmptyStackException();
-            } else if (head.getNext() != null) {
-                Student tmp = head;
-                head = tmp;
-                return tmp;
+                throw new Error();
 
-            } else if (head.getNext() == null) {
-                Student tmp = head;
-                head = null;
-                return tmp;
-
-            } else {
-                return null;
             }
 
+            Student tmp = head;
+            head = head.getNext();
+            nStudents--;
+            if (head == null) {
+                tail = null;
+                throw new EmptyStackException();
+            }
+
+            return tmp;
+
+
         } catch(EmptyStackException e) {
-            return null;
+            return head;
         }
     }   // Student deleteHead()
 
@@ -121,31 +123,48 @@ public class StudentList {
          * Return true if found.
          */
 
-        Student next = head;
+        Student curr = head;
+        Student prev = head;
 
-        if (head == null) {
+        if (curr == null) {
             return false;
         }
 
-        while (next != null) {
-            if (next.getNext().getName().equals(name)) {
-                next.setNext(next.getNext());
+        if (curr.getName().equals(name)) {              // HEAD
+            head = head.getNext();
+            if (head == null) {
+                tail = null;
+            }
+            return true;
+        }
+        while (curr.getNext() != null) {
+            prev = curr;
+            curr = curr.getNext();
+
+            if (curr.getName().equals(name)) {
+                prev.setNext(curr);
+                if (prev.getNext() == null) {
+                    tail = prev;
+                }
                 return true;
-            } else {
-                next = next.getNext();
             }
         }
+
         return false;
     }   // boolean deleteKey(String name)
 
     public String displayStudents() {
 
-        Student s = head;
+        Student next = head;
         String displayString = "";
 
-        while (s != null) {
-            displayString += s.getName() + " ";
-            s = s.getNext();
+        if (head == null) {
+            return displayString;
+        }
+
+        while (next != null) {
+            displayString += next.getName() + " ";
+            next = next.getNext();
         }
 
         return displayString;
@@ -154,15 +173,15 @@ public class StudentList {
     public static void main(String[] args) {
         StudentList studentList = new StudentList();
 
-        Student steve = new Student();
-        Student bob = new Student();
+        Student frodo = new Student("Frodo", 30);
 
-        steve.setName("Steve");
-        bob.setName("Bob");
-
-        studentList.insertHead(steve);
+        studentList.insertHead(frodo);
 
         System.out.println(studentList.displayStudents());
+        System.out.println(frodo.getName());
+
+
+
     }
 
 }   // Class StudentList
