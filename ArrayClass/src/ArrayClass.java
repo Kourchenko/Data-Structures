@@ -298,8 +298,9 @@ public class ArrayClass {
         // addAtEnd(1)
         // [2, 3, 4, 4]
         // [2, 3, 3, 4]
-        // [2, 2, 3, 4]
-        // 1, 2, 3, 4]
+        // [1, 2, 3, 4]
+        // [x, 2, 3, 4]
+        // [x, x, 3, 4]
 
         if (nElements < 1) {
             arr[nElements] = n;
