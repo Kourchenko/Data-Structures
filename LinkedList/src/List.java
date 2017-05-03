@@ -157,4 +157,25 @@ public class List {
 
     }   // void addTail(int v)
 
+
+    public boolean linearFind(int x) {
+
+        int theArray[] = new int[10];
+        int deleteIndex = 0;
+        int nElems = 0;
+        boolean ifFound = false;
+
+        for (int i = 0; i<theArray.length; i++) {
+            if (theArray[i] == x) {
+                deleteIndex = theArray[i];
+                ifFound = true;
+            }
+        }
+
+        for (int i=deleteIndex; i<nElems; i++) {
+            theArray[i] = theArray[i+1];
+        }
+        theArray[nElems--] = 0;
+        return ifFound;
+    }   // boolean linearFind(int x)
 }
