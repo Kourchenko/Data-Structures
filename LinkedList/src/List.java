@@ -73,7 +73,6 @@ public class List {
 
             // Not Empty List; remove value at head
             int temp = head.getValue();         // Found
-            Link ptr = head;
 
             // Head is now next value
             head = head.getNext();

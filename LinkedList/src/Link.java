@@ -6,11 +6,11 @@ public class Link {
      */
 
     private Link next;
-    private char value;
+    private int value;
     private Link prev;
 
 
-    Link(char n) {
+    Link(int n) {
         value = n;
         next = null;
         prev = null;
@@ -26,7 +26,7 @@ public class Link {
         return true;
     }   // boolean setPrev(Link n)
 
-    public char getValue() {
+    public int getValue() {
         return value;
     }   // char getValue()
 
