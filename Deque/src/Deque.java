@@ -59,9 +59,6 @@ public class Deque {
     private int nElems;
     private int left;
     private int right;
-    private String[] errorsArray = new String[100];
-    private int errors = 0;
-
 
     Deque() {
 
