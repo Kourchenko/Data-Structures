@@ -4,8 +4,6 @@ public class PriorityQueue {
     private int[] priorityQ;
     private int size;
     private int nElems;
-    private int smallest;
-    private int largest;
 
     /*
      * Priority queue holds integers
@@ -35,8 +33,6 @@ public class PriorityQueue {
         size = 100;
         priorityQ = new int[size];
         nElems = 0;
-        largest = priorityQ[0];
-        smallest = priorityQ[0];
 
     }   // Constructor PriorityQueue()
 
@@ -49,8 +45,6 @@ public class PriorityQueue {
         size = N;
         priorityQ = new int[size];
         nElems = 0;
-        largest = priorityQ[0];
-        smallest = priorityQ[0];
 
     }   // Constructor PriorityQueue(int n)
 
