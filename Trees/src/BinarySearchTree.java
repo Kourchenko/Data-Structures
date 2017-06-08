@@ -21,66 +21,48 @@ public class BinarySearchTree {
 
     public void insertItem(int value) {
 
-        /*
-            Insert the integer value.
-            Due to the nature of the tree structure, findNext, findDelete...
-            Cannot insert values less than -1;
+        /**
+         * Insert the integer value.
+         * Due to the nature of the tree structure, findNext, findDelete...
+         * Cannot insert values less than -1;
          */
-
         if (value < 0) {
             System.out.println(value + ": Cannot insert values greater than 0..." );
             return;
-
         }
-
         // Empty Tree
         if (root == null) {
             root = new Node(value);
             return;
-
         }
 
         Node ptr = root;
         Node temp = new Node(value);
 
         // Find proper location to put the value
-        while (ptr != null ) {
+        while (ptr != null) {
             if (value < ptr.getValue()) {
-
                 // Go Left
                 if (ptr.getLeft() == null) {
                     ptr.setLeft(temp);
                     return;
-
                 }
-
                 ptr = ptr.getLeft();
-
-            }
-
-            if (value > ptr.getValue()) {
-
+            } else {
                 // Go Right
                 if (ptr.getRight() == null) {
                     ptr.setRight(temp);
                     return;
-
                 }
-
                 ptr = ptr.getRight();
-
             }
-
         }
-
-        return;
-
     }   // boolean add(value)
 
     public boolean findItem(int val) {
 
-        /*
-            Find the integer value.
+        /**
+         * Find the integer value.
          */
 
         // No tree
@@ -300,8 +282,6 @@ public class BinarySearchTree {
 
         bst.insertItem(6);
         bst.insertItem(7);
-
-        System.out.println(bst.findItem(9));
 
         bst.displayTree();
     }

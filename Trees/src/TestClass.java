@@ -182,10 +182,12 @@ public class TestClass {
 
     public static boolean pay(int[] taxes, BinarySearchTree bst) {
 
-        /*
-            Helper function for paying taxes.
+        /**
+         * Helper function for paying taxes.
          */
-        
+
+        // Check tax forms and check your bag for a diamond big enough to pay said tax.
+        // Uncle Sam is a greedy bitch.
         for (int i : taxes) {
 
             int found = bst.findNext(i);
