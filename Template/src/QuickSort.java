@@ -15,9 +15,13 @@ public class QuickSort {
             Median can be any k-th index you want.
          */
 
-        median = recFindMedian(theArray, 0, length-1, length/2);
+        try {
+            return recFindMedian(theArray, 0, length - 1, length / 2);
 
-        return median;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(":underflow_error");
+            return length;
+        }
 
     }   // void findMedian(theArray, length, median)
 
@@ -26,6 +30,7 @@ public class QuickSort {
         /*
             Recursively Find the k-th element in theArray, from first to last.
          */
+
 
         int p = partition(theArray, first, last);
 
@@ -100,7 +105,6 @@ public class QuickSort {
             return p;
 
         } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println(" :underflow_error");
             return 0;
         }
 

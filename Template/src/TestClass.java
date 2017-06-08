@@ -34,7 +34,7 @@ public class TestClass {
 
     // === Median ===
     private int[] array1 = new int[0];
-    private int[] array2 = new int[SIZE];
+    private int[] array2 = {1, 5, 2, 8, 0, 4, 7, 3, 6, 9};
     private int median;
     // === Median ===
 
@@ -430,13 +430,13 @@ public class TestClass {
             QuickSort qSort = new QuickSort();
 
             System.out.println("Testing an array of length 0, should throw underflow exception ");
-            qSort.findMedian(array1, 0, median);
+            median = qSort.findMedian(array1, 0, median);
             System.out.println("The median was " + median);
             System.out.println("Testing an array of the first 10 ints, median should be 5 ");
-            qSort.findMedian(array2, SIZE, median);
+            median = qSort.findMedian(array2, SIZE, median);
             System.out.println("The median was " + median);
             System.out.println("Testing an array of first 9 ints, median should be 4 ");
-            qSort.findMedian(array2, SIZE-1, median);
+            median = qSort.findMedian(array2, SIZE-1, median);
             System.out.println("The median was " + median);
 
         } catch(NullPointerException e) {
