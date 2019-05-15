@@ -4,12 +4,15 @@
 const int MAX_SIZE=100;
 
 class ArrayClass {
-    int[] array;
-    int count;
-    int smallest;
-    int largest;
+    private: 
+        int* array[];
+        int maxSize;
+        int count;
+        int smallest;
+        int largest;
 
     public:
+    
         ArrayClass();
         ArrayClass(int size);
         int getSize();
@@ -26,6 +29,6 @@ class ArrayClass {
         void cleanup();
         int isEmpty();
 
-}
+};
 
-#endif
+#endif // ArrayClass_H
