@@ -1,15 +1,16 @@
 #ifndef ArrayClass_H
 #define ArrayClass_H
 
-const int MAX_SIZE=100;
 
 class ArrayClass {
     private: 
-        int* array[];
+        const int DEFAULT_SIZE = 100;
+        int * array;
         int maxSize;
         int count;
         int smallest;
         int largest;
+        void resize();
 
     public:
     
@@ -21,7 +22,6 @@ class ArrayClass {
         int getLargest();
         int addItem(int v);
         int find(int v);
-        void resize();
         void printItems();
         void removeItem(int v);
         void removeItemAtIndex(int index);
